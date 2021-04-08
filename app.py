@@ -16,7 +16,7 @@ def beer_home():
 
 @app.route('/coffee_home')
 def coffee_home():
-    return render_template('coffee_home.html')
+    return render_template('coffee_home_brands.html')
 
 if __name__ == "__main__":
     app.run('127.0.0.1', 5000, debug = True)
