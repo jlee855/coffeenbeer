@@ -1,0 +1,102 @@
+<!Doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <title>커피엔맥주에 오신 것을 환영합니다!</title>
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: "Stylish", sans-serif;
+        }
+
+        .wrap {
+            width: 700px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .title-page {
+            width: 700px;
+            margin: 30px 350px;
+            padding: 50px;
+        }
+
+        .button_coffee {
+            height: 300px;
+            width: 300px;
+            margin-left: 50px;
+            margin-right: 50px;
+            border-radius: 100%;
+            background-image: url("../static/coffee.jpeg");
+        }
+
+        .button_beer {
+            background-image: url("../static/beer.png");
+            height: 300px;
+            width: 300px;
+            margin-left: 250px;
+            margin-right: 50px;
+            border-radius: 100%;
+        }
+        .button_text_coffee {
+            color: white;
+        }
+        .button_text_beer {
+            color: black;
+        }
+    </style>
+    <script>
+        function beer_click() {
+            $.ajax({
+                type: "GET",
+                url: "/beer_home",
+                data: {},
+                success: function (response) {
+                    document.write(response)
+                }
+            })
+        }
+
+        function coffee_click() {
+            $.ajax({
+                type: "GET",
+                url: "/coffee_home",
+                data: {},
+                success: function (response) {
+                    document.write(response)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1 class="title-page">
+        보시고 싶은 리뷰를 선택해주세요.
+    </h1>
+</div>
+<div class='container'>
+    <button class = "button_beer" onclick = beer_click()>
+        <h4 class = "button_text_beer">맥주</h4>
+    </button>
+    <button class = "button_coffee" onclick = coffee_click()>
+        <h4 class = "button_text_coffee">커피</h4>
+    </button>
+</div>
