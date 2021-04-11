@@ -17,6 +17,23 @@
     <link href="{{url_for('static', filename = 'coffeenbeer.css')}}" rel='stylesheet'>
     <title>원하시는 필드를 선택해주세요</title>
     <style type="text/css">
+        * {
+            font-family: "Stylish", sans-serif;
+        }
+
+        .title-page {
+            width: 700px;
+            margin: 30px 350px;
+            padding: 30px;
+        }
+
+        .sub-title {
+            width: 1000px;
+            margin: 30px 50px;
+            padding: 10px;
+            text-align: center;
+        }
+
         a:link {
             color: black;
             text-decoration: none;
@@ -37,23 +54,56 @@
     </style>
     <script>
         function brandclick() {
+            $.ajax({
+                type: "GET",
+                url: "/coffee_home_brands",
+                data: {},
+                success: function (response) {
+                    document.write(response)
+                }
+            })
+        }
 
+        function flavorclick() {
+            $.ajax({
+                "type": "GET",
+                url: "/under_construction",
+                data: {},
+                success: function (response) {
+                    document.write(response)
+                }
+            })
+        }
+
+        function countryclick() {
+            $.ajax({
+                "type": "GET",
+                url: "/coffee_home_flavors",
+                data: {},
+                success: function (response) {
+                    document.write(response)
+                }
+            })
         }
     </script>
 </head>
 <body>
-<div>
+<div class = 'container'>
     <h1 class='title-page'>원하시는 필드를 선택해 주세요.</h1>
     <br>
+</div>
+<div class = 'container'>
     <a href='/coffee_home_brands'>
-        <h2 class='title-page'>브랜드</h2>
+        <h2 class='sub-title container'>브랜드</h2>
     </a>
     <hr width="50%">
-    <h2>맛</h2>
+    <a href='/under_construction'>
+        <h2 class='sub-title container'>맛</h2>
+    </a>
     <hr width="50%">
-    <h2>원산지</h2>
-    <hr width="50%">
-
+    <a href='/coffee_home_countries'>
+        <h2 class='sub-title conatiner'>원산지</h2>
+    </a>
 </div>
 
 </body>

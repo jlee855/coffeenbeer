@@ -35,7 +35,7 @@ for link in soup.find_all('a'):
                 name = i.text
                 country = str(i).split('<br/>')[0]
                 country = country.split('>')[1].rstrip()
-        db.coffee_info.insert_one({'brand': 'coffee_libre',
+        db.coffee_info.insert_one({'brand': '커피리브레',
                                    'lineup': 'Goldmund',
                                    'name': name,
                                    'country': country,
@@ -73,7 +73,7 @@ for link in soup.find_all('a'):
                 name = i.text
                 country = str(i).split('<br/>')[0]
                 country = country.split('>')[1].rstrip()
-        db.coffee_info.insert_one({'brand': 'coffee_libre',
+        db.coffee_info.insert_one({'brand': '커피리브레',
                                    'lineup': 'Goldmund',
                                    'name': name,
                                    'country': country,
