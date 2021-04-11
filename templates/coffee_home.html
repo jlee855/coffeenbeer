@@ -29,7 +29,7 @@
 
         .sub-title {
             width: 1000px;
-            margin: 30px 50px;
+            margin: 10px 50px;
             padding: 10px;
             text-align: center;
         }
@@ -52,40 +52,6 @@
         !important;
         }
     </style>
-    <script>
-        function brandclick() {
-            $.ajax({
-                type: "GET",
-                url: "/coffee_home_brands",
-                data: {},
-                success: function (response) {
-                    document.write(response)
-                }
-            })
-        }
-
-        function flavorclick() {
-            $.ajax({
-                "type": "GET",
-                url: "/under_construction",
-                data: {},
-                success: function (response) {
-                    document.write(response)
-                }
-            })
-        }
-
-        function countryclick() {
-            $.ajax({
-                "type": "GET",
-                url: "/coffee_home_flavors",
-                data: {},
-                success: function (response) {
-                    document.write(response)
-                }
-            })
-        }
-    </script>
 </head>
 <body>
 <div class = 'container'>
@@ -103,6 +69,10 @@
     <hr width="50%">
     <a href='/coffee_home_countries'>
         <h2 class='sub-title conatiner'>원산지</h2>
+    </a>
+    <hr width = "50%">
+    <a href = '/under_construction'>
+        <h2 class = 'sub-title container'>품종</h2>
     </a>
 </div>
 

@@ -20,9 +20,14 @@
                 font-family: "Stylish", sans-serif;
         }
         .title-page {
-            width: 1000px;
-            margin: 50px 500px;
+            width: 700px;
+            margin: 30px 350px;
             padding: 30px;
+        }
+        .image_title {
+            width: 700px;
+            margin: 0px 350px;
+            padding: 10px;
         }
         .image {
             width: 500px;
@@ -31,9 +36,9 @@
     </style>
 </head>
 <body>
-<div class = "container title-page">
-    <h1>현재 웹사이트는 개설 중입니다.</h1>
-    <img src = "{{ url_for('static', filename = 'under_construction_PNG66.png') }}" class = "image">
+<div class = "container">
+    <h1 class = 'title-page'>현재 웹사이트는 개설 중입니다.</h1>
+    <img src = "{{ url_for('static', filename = 'under_construction_PNG66.png') }}" class = "container image_title image">
 </div>
 
 </body>
