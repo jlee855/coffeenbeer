@@ -19,6 +19,9 @@
     <link href="{{url_for('static', filename = 'coffeenbeer.css')}}" rel='stylesheet'>
     <title>커피엔맥주에 오신 것을 환영합니다!</title>
     <style type='text/css'>
+        * {
+            font-family: "Stylish", sans-serif;
+        }
         .title-page {
             width: 700px;
             margin: 30px 350px;
@@ -73,12 +76,12 @@
 </div>
 <div class='container'>
     <a href = '/under_construction'>
-        <button class="button_beer button_hover button_focus" onclick=beer_click()>
+        <button class="button_beer button_hover button_focus">
             <h4 class="button_text_beer">맥주</h4>
         </button>
     </a>
     <a href = '/coffee_home'>
-        <button class="button_coffee button_hover button_focus" onclick=coffee_click()>
+        <button class="button_coffee button_hover button_focus">
             <h4 class="button_text_coffee">커피</h4>
         </button>
     </a>

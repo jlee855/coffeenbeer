@@ -30,8 +30,12 @@ def coffee_home_flavor():
 def coffee_home_country():
     return render_template('coffee_home_countries.html')
 
-@app.route('/coffee_review')
-def coffee_review():
+@app.route('/coffee_review', methods = ["POST"])
+def coffee_review_post():
+    return render_template('coffee_review.html')
+
+@app.route('/coffee_review', methods = ["GET"])
+def coffee_review_get():
     return render_template('coffee_review.html')
 
 if __name__ == "__main__":
