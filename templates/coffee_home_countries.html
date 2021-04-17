@@ -16,17 +16,8 @@
     <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
     <title>국가를 선택해주세요</title>
     <script>
-
-        //localhost:5000/cofee_review?name=페
         function country_click(name) {
-            $.ajax({
-                type: "GET",
-                url: "/coffee_review?name="+name,
-                data: {},
-                success: function (response) {
-                    document.write(response)
-                }
-            })
+            window.location.href = '/coffee_listing?country='+name
         }
     </script>
 
@@ -226,37 +217,37 @@
     <h1 class="title-page">국가를 선택해주세요</h1>
 </div>
 <div class="container">
-    <button class="button_bolivia button_focus button_hover button_general" onclick = country_click()>
+    <button class="button_bolivia button_focus button_hover button_general" onclick = country_click('볼리비아')>
         <h4 class="button_text_white">볼리비아<br>Bolivia</h4>
     </button>
-    <button class='button_brazil button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_brazil button_focus button_hover button_general' onclick = country_click('브라질')>
         <h4 class="button_text_white">브라질<br>Brazil</h4>
     </button>
-    <button class='button_colombia button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_colombia button_focus button_hover button_general' onclick = country_click('콜롬비아')>
         <h4 class="button_text_white">콜롬비아<br>Colombia</h4>
     </button>
-    <button class='button_costa_rica button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_costa_rica button_focus button_hover button_general' onclick = country_click('코스타리카')>
         <h4 class="button_text_white">코스타리카<br>Costa Rica</h4>
     </button>
-    <button class='button_ecuador button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_ecuador button_focus button_hover button_general' onclick = country_click('에콰도르')>
         <h4 class="button_text_white">에콰도르<br>Ecuador</h4>
     </button>
-    <button class='button_el_salvador button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_el_salvador button_focus button_hover button_general' onclick = country_click('엘살바도르')>
         <h4 class="button_text_black">엘 살바도르<br>El Salvador</h4>
     </button>
-    <button class='button_ethiopia button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_ethiopia button_focus button_hover button_general' onclick = country_click('에티오피아')>
         <h4 class="button_text_white">에티오피아<br>Ethiopia</h4>
     </button>
-    <button class='button_guatemala button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_guatemala button_focus button_hover button_general' onclick = country_click('과테말라')>
         <h4 class="button_text_black">과테말라<br>Guatemala</h4>
     </button>
-    <button class='button_hawaii button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_hawaii button_focus button_hover button_general' onclick = country_click('하와이')>
         <h4 class="button_text_black">하와이<br>Hawaii</h4>
     </button>
-    <button class='button_honduras button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_honduras button_focus button_hover button_general' onclick = country_click('온두라스')>
         <h4 class="button_text_black">온두라스<br>Honduras</h4>
     </button>
-    <button class='button_india button_focus button_hover button_general' onclick = country_click()>
+    <button class='button_india button_focus button_hover button_general' onclick = country_click('인도')>
         <h4 class="button_text_black">인도<br>India</h4>
     </button>
     <button class='button_indonesia button_focus button_hover button_general' onclick = country_click("인도네시아")>

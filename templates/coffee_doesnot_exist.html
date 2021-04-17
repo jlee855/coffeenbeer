@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <title>맥주 리뷰</title>
+    <style>
+        * {
+                font-family: "Stylish", sans-serif;
+        }
+        .title-page {
+            width: 700px;
+            margin: 30px 350px;
+            padding: 30px;
+        }
+        .image_title {
+            width: 700px;
+            margin: 0px 350px;
+            padding: 10px;
+        }
+        .image {
+            width: 400px;
+            height: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class = "container">
+    <h1 class = 'title-page'>찾으시는 정보가 없습니다.</h1>
+    <img src = "{{ url_for('static', filename = 'sad_face.png') }}" class = "container image_title image">
+</div>
+
+</body>
+</html>

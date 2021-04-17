@@ -37,25 +37,28 @@ for i in soup.find_all('a'):
         # prdSide > div > div > div.info-wrap > div.xans-element-.xans-product.xans-product-detail.boxArea > div.description2
         for i in soup.select("#prdSide > div > div > div.info-wrap > div.xans-element-.xans-product.xans-product-detail.boxArea > div.description2"):
             description = str(i).split('<br/>')[0]
-            print(description.split('>'))
-        # ## Tidying the Scraped Data
-        # if u'\xa0' in process:
-        #     process = process.replace(u'\xa0', u' ')
-        # if u'\xa0' in country:
-        #     country = country.replace(u'\xa0', u' ')
-        # if u'\xa0' in type:
-        #     type = type.replace(u'\xa0', u' ')
-        # print(process)
-        # print(country)
-        # print(type)
-        # db.coffee_info.insert_one({
-        #     'brand': 'fritz_coffee',
-        #     'lineup': 'Single Origin',
-        #     'name': name.rstrip(),
-        #     'country': country.split(': ')[1].rstrip(),
-        #     'type': type.split(': ')[1].rstrip(),
-        #     'process': process.split(': ')[1].rstrip()
-        # })
+            description = description.split('>')
+            description = description[1]
+            description = str(description)
+            description = description.replace('Flavor note : ', '')
+            description = description.replace('Flavor Note : ', '')
+            description = description.replace(' </div', '')
+        ## Tidying the Scraped Data
+        if u'\xa0' in process:
+            process = process.replace(u'\xa0', u' ')
+        if u'\xa0' in country:
+            country = country.replace(u'\xa0', u' ')
+        if u'\xa0' in type:
+            type = type.replace(u'\xa0', u' ')
+        db.coffee_info.insert_one({
+            'brand': '프릳츠커피',
+            'lineup': 'Single Origin',
+            'name': name.rstrip(),
+            'country': country.split(': ')[1].rstrip().split(' ')[0],
+            'type': type.split(': ')[1].rstrip(),
+            'process': process.split(': ')[1].rstrip(),
+            'description': description
+        })
 
 
 

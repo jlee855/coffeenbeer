@@ -90,17 +90,8 @@
         }
     </style>
     <script>
-        function brand_click() {
-            $.ajax({
-                type: "POST",
-                url: "/coffee_review",
-                data: {
-                    brand: $("h4").text()
-                },
-                success: function (response) {
-                    document.write(response)
-                }
-            })
+        function brand_click(brand) {
+            window.location.href = '/coffee_listing?brand=' + brand
         }
     </script>
 </head>

@@ -35,17 +35,18 @@ for link in soup.find_all('a'):
                 name = i.text
                 country = str(i).split('<br/>')[0]
                 country = country.split('>')[1].rstrip()
-        db.coffee_info.insert_one({'brand': '커피 리브레',
-                                   'lineup': 'Goldmund',
-                                   'name': name,
-                                   'country': country,
-                                   'roasting': roasting,
-                                   'flavor': flavor,
-                                   'type': type})
+        if db.coffee_info.find_one({'name': name, 'roasting': roasting}) != {}:
+            db.coffee_info.insert_one({'brand': '커피리브레',
+                                       'lineup': 'Goldmund',
+                                       'name': name,
+                                       'country': country,
+                                       'roasting': roasting,
+                                       'flavor': flavor,
+                                       'type': type})
 
 # ################################################################################
 
-# # Coffee Libre Single Origin
+# Coffee Libre Single Origin
 
 url = "https://coffeelibre.kr/shop/list.php?ca_id=1030"
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
@@ -73,11 +74,12 @@ for link in soup.find_all('a'):
                 name = i.text
                 country = str(i).split('<br/>')[0]
                 country = country.split('>')[1].rstrip()
-        db.coffee_info.insert_one({'brand': '커피 리브레',
-                                   'lineup': 'Goldmund',
-                                   'name': name,
-                                   'country': country,
-                                   'roasting': roasting,
-                                   'flavor': flavor,
-                                   'type': type})
+        if db.coffee_info.find_one({'name': name, 'roasting': roasting}) != {}:
+            db.coffee_info.insert_one({'brand': '커피리브레',
+                                       'lineup': 'Goldmund',
+                                       'name': name,
+                                       'country': country,
+                                       'roasting': roasting,
+                                       'flavor': flavor,
+                                       'type': type})
 ################################################################################
